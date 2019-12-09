@@ -2,7 +2,7 @@ export default class MainPage {
     constructor(context) {
         this._context = context;
         this._rootEl = context.rootEl();
-        setInterval(() => this.poling(), 3000);
+        setInterval(() => this.poling(), 2000);
 
 
     }
@@ -303,7 +303,7 @@ export default class MainPage {
             this.loadAll();
             this.pollNewPosts();
 
-        }, 20000);
+        }, 10000);
     }
 
 
