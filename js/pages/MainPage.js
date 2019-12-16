@@ -2,7 +2,7 @@ export default class MainPage {
     constructor(context) {
         this._context = context;
         this._rootEl = context.rootEl();
-        setInterval(() => this.poling(), 2000);
+        // setInterval(() => this.poling(), 2000);
 
 
     }
@@ -167,7 +167,7 @@ export default class MainPage {
                     this._contentInputEl.value = '';
                     this._mediaNameInputEl.value = '';
                     this._mediaInputEl.value = '';
-                    //this.loadAll();
+                    this.loadAll();
                 },
                 error => {
                     this.showError(error);
@@ -179,25 +179,25 @@ export default class MainPage {
 
     }
 
-    poling() {
-        this._context.get('/posts/poling', {},
-            text => {
-                 const info = JSON.parse(text);
-                 const txt = JSON.stringify(info);
-                if (txt!='[]') {
-                    this.showNotification(text);
-                }
-            }
-            , error => {
-                this.showError(error);
-            });
-    }
-
-    showNotification(notification) {
-        const info = JSON.parse(notification);
-        this._notificationMessageEl.textContent = info;
-        this._notificationModal.modal('show');
-    }
+    // poling() {
+    //     this._context.get('/posts/poling', {},
+    //         text => {
+    //              const info = JSON.parse(text);
+    //              const txt = JSON.stringify(info);
+    //             if (txt!='[]') {
+    //                 this.showNotification(text);
+    //             }
+    //         }
+    //         , error => {
+    //             this.showError(error);
+    //         });
+    // }
+    //
+    // showNotification(notification) {
+    //     const info = JSON.parse(notification);
+    //     this._notificationMessageEl.textContent = info;
+    //     this._notificationModal.modal('show');
+    // }
 
 
     loadAll() {

@@ -3,6 +3,7 @@ import Translator from './translator.js';
 import Router from './router.js';
 import MainPage from './pages/MainPage.js'
 import MessagesPage from './pages/MessagesPage.js'
+import MenuPage from './menu/MenuPage.html'
 
 class Context {
   constructor(rootEl, api, router, translator, mediaUrl, websocketUrl) {
@@ -90,6 +91,7 @@ const router = new Router();
 
 router.register('/', MainPage);
 router.register('/messages', MessagesPage);
+router.register('/menu',MenuPage);
 
 const [backendUrl, websocketUrl] = ['localhost', '127.0.0.1'].includes(window.location.hostname) ?
   ['http://localhost:9999', 'ws://localhost:9999/ws'] : ['https://bak-for-my-app.herokuapp.com', 'wss://bak-for-my-app.herokuapp.com/ws'];
